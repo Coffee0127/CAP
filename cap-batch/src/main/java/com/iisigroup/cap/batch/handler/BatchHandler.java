@@ -33,6 +33,7 @@ import org.springframework.batch.core.JobParametersInvalidException;
 import org.springframework.batch.core.configuration.DuplicateJobException;
 import org.springframework.batch.core.configuration.JobRegistry;
 import org.springframework.batch.core.configuration.support.ClassPathXmlApplicationContextFactory;
+import org.springframework.batch.core.configuration.support.GenericApplicationContextFactory;
 import org.springframework.batch.core.configuration.support.ReferenceJobFactory;
 import org.springframework.batch.core.launch.JobExecutionNotRunningException;
 import org.springframework.batch.core.launch.NoSuchJobException;
@@ -513,8 +514,7 @@ public class BatchHandler extends MFormHandler {
 	protected ApplicationContext createApplicationContextFactory(
 			ApplicationContext parent,
 			org.springframework.core.io.Resource resource) {
-		ClassPathXmlApplicationContextFactory applicationContextFactory = new ClassPathXmlApplicationContextFactory();
-		applicationContextFactory.setResource(resource);
+	    GenericApplicationContextFactory applicationContextFactory = new GenericApplicationContextFactory(resource);
 		if (parent != null) {
 			applicationContextFactory.setApplicationContext(parent);
 		}

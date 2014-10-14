@@ -7,9 +7,6 @@
 		<version>2.2.0</version>
 	</parent>
 	<artifactId>cap-hg</artifactId>
-	<properties>
-		<spring.integration.version>2.2.0.RELEASE</spring.integration.version>
-	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.integration</groupId>
